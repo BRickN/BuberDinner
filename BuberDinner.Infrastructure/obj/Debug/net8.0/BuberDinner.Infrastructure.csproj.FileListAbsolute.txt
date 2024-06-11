@@ -1,0 +1,11 @@
+/Users/rick.nieling/RiderProjects/BuberDinner/BuberDinner.Infrastructure/bin/Debug/net8.0/BuberDinner.Infrastructure.deps.json
+/Users/rick.nieling/RiderProjects/BuberDinner/BuberDinner.Infrastructure/bin/Debug/net8.0/BuberDinner.Infrastructure.dll
+/Users/rick.nieling/RiderProjects/BuberDinner/BuberDinner.Infrastructure/bin/Debug/net8.0/BuberDinner.Infrastructure.pdb
+/Users/rick.nieling/RiderProjects/BuberDinner/BuberDinner.Infrastructure/obj/Debug/net8.0/BuberDinner.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/rick.nieling/RiderProjects/BuberDinner/BuberDinner.Infrastructure/obj/Debug/net8.0/BuberDinner.Infrastructure.AssemblyInfoInputs.cache
+/Users/rick.nieling/RiderProjects/BuberDinner/BuberDinner.Infrastructure/obj/Debug/net8.0/BuberDinner.Infrastructure.AssemblyInfo.cs
+/Users/rick.nieling/RiderProjects/BuberDinner/BuberDinner.Infrastructure/obj/Debug/net8.0/BuberDinner.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/rick.nieling/RiderProjects/BuberDinner/BuberDinner.Infrastructure/obj/Debug/net8.0/BuberDinner.Infrastructure.dll
+/Users/rick.nieling/RiderProjects/BuberDinner/BuberDinner.Infrastructure/obj/Debug/net8.0/refint/BuberDinner.Infrastructure.dll
+/Users/rick.nieling/RiderProjects/BuberDinner/BuberDinner.Infrastructure/obj/Debug/net8.0/BuberDinner.Infrastructure.pdb
+/Users/rick.nieling/RiderProjects/BuberDinner/BuberDinner.Infrastructure/obj/Debug/net8.0/ref/BuberDinner.Infrastructure.dll
