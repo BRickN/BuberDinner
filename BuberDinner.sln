@@ -13,6 +13,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuberDinner.Domain", "Buber
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuberDinner.Infrastructure", "BuberDinner.Infrastructure\BuberDinner.Infrastructure.csproj", "{35E59484-390D-4369-980E-6B1D38D1B81E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Requests", "Requests", "{0F6F0017-C706-4AE0-9C19-2CAACF71CD5F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Authentication", "Authentication", "{EF76AF6A-D031-449A-957F-768275C139DF}"
+	ProjectSection(SolutionItems) = preProject
+		Login.http = Login.http
+		Register.http = Register.http
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,5 +94,8 @@ Global
 		{35E59484-390D-4369-980E-6B1D38D1B81E}.Release|x64.Build.0 = Release|Any CPU
 		{35E59484-390D-4369-980E-6B1D38D1B81E}.Release|x86.ActiveCfg = Release|Any CPU
 		{35E59484-390D-4369-980E-6B1D38D1B81E}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EF76AF6A-D031-449A-957F-768275C139DF} = {0F6F0017-C706-4AE0-9C19-2CAACF71CD5F}
 	EndGlobalSection
 EndGlobal
