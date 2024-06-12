@@ -18,10 +18,10 @@ public class AuthenticationController(IAuthenticationService authenticationServi
             request.Password);
         
         var response = new AuthenticationResponse(
-            authResult.user.Id, 
-            authResult.user.FirstName, 
-            authResult.user.LastName,
-            authResult.user.Email, 
+            authResult.User.Id, 
+            authResult.User.FirstName, 
+            authResult.User.LastName,
+            authResult.User.Email, 
             authResult.Token);
         
         return Ok(response);
@@ -33,10 +33,10 @@ public class AuthenticationController(IAuthenticationService authenticationServi
         var authResult = authenticationService.Login(request.Email, request.Password);
         
         var response = new AuthenticationResponse(
-            authResult.user.Id, 
-            authResult.user.FirstName, 
-            authResult.user.LastName,
-            authResult.user.Email, 
+            authResult.User.Id, 
+            authResult.User.FirstName, 
+            authResult.User.LastName,
+            authResult.User.Email, 
             authResult.Token);
         
         return Ok(response);
