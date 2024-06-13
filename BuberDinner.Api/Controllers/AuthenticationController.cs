@@ -19,7 +19,7 @@ public class AuthenticationController(IAuthenticationService authenticationServi
             request.Password);
 
         return authResult.Match(
-            authResult => Ok(MapAuthResult(authResult)),
+            authenticationResult => Ok(MapAuthResult(authenticationResult)),
             errors => Problem(errors)
         );
     }
@@ -36,7 +36,7 @@ public class AuthenticationController(IAuthenticationService authenticationServi
         }
         
         return authResult.Match(
-            authResult => Ok(MapAuthResult(authResult)),
+            authenticationResult => Ok(MapAuthResult(authenticationResult)),
             errors => Problem(errors)
         );
     }

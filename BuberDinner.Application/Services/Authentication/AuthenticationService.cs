@@ -38,11 +38,10 @@ public class AuthenticationService(IJwtTokenGenerator jwtTokenGenerator, IUserRe
 
     public ErrorOr<AuthenticationResult> Login(string email, string password)
     {
-        throw new Exception("BOOM");
         // Validate user exists
         if (userRepository.GetUserByEmail(email) is not { } user)
         {
-            return Errors.Authentication.InvalidCredentials;
+            return Errors.Authentication.UserNotFound;
         }
 
         // Validate password
