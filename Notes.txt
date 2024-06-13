@@ -1,0 +1,17 @@
+CQRS
+Command query responsibility segregation
+Split logic for reading and writing data into separate classes
+One that reads data (Query) and one that manipulates data (Command)
+
+//Manipulation
+interface ICommandStack<T>
+{
+    void Push(T value);
+    T Pop();
+}
+
+//Reading/querying  
+interface IQueryStack<T>
+{
+    T Peek();
+}

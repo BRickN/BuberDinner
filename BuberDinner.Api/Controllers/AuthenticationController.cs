@@ -1,22 +1,27 @@
-using BuberDinner.Application.Services.Authentication;
+using BuberDinner.Application.Authentication.Commands.Register;
+using BuberDinner.Application.Authentication.Common;
+using BuberDinner.Application.Authentication.Queries.Login;
 using BuberDinner.Contracts.Authentication;
 using BuberDinner.Domain.Common.Errors;
 using Microsoft.AspNetCore.Mvc;
 using ErrorOr;
+using MediatR;
 
 namespace BuberDinner.Api.Controllers;
 
 [Route("auth")]
-public class AuthenticationController(IAuthenticationService authenticationService) : ApiController
+public class AuthenticationController(IMediator mediator) : ApiController
 {
     [HttpPost("register")]
-    public IActionResult Register(RegisterRequest request)
+    public async Task<IActionResult> Register(RegisterRequest request)
     {
-        ErrorOr<AuthenticationResult> authResult = authenticationService.Register(
+        var command = new RegisterCommand(
             request.FirstName,
             request.LastName,
             request.Email,
             request.Password);
+        
+        var authResult = await mediator.Send(command);
 
         return authResult.Match(
             authenticationResult => Ok(MapAuthResult(authenticationResult)),
@@ -25,22 +30,25 @@ public class AuthenticationController(IAuthenticationService authenticationServi
     }
 
     [HttpPost("login")]
-    public IActionResult Login(LoginRequest request)
+    public async Task<IActionResult> Login(LoginRequest request)
     {
-        var authResult = authenticationService.Login(request.Email, request.Password);
-        
-        if(authResult.IsError && authResult.FirstError == Errors.Authentication.InvalidCredentials)
+        var query = new LoginQuery(
+            request.Email,
+            request.Password);
+        var authResult = await mediator.Send(query);
+
+        if (authResult.IsError && authResult.FirstError == Errors.Authentication.InvalidCredentials)
         {
             return Problem(statusCode: StatusCodes.Status401Unauthorized,
                 title: Errors.Authentication.InvalidCredentials.Description);
         }
-        
+
         return authResult.Match(
             authenticationResult => Ok(MapAuthResult(authenticationResult)),
             errors => Problem(errors)
         );
     }
-    
+
     private static AuthenticationResponse MapAuthResult(AuthenticationResult authResult)
     {
         return new AuthenticationResponse(
