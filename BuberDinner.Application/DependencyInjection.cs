@@ -1,3 +1,4 @@
+using BuberDinner.Application.Common.Mapping;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BuberDinner.Application;
@@ -8,6 +9,7 @@ public static class DependencyInjection
     {
         services.AddMediatR(config => 
             config.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly));
+        services.AddAutoMapper(typeof(ApplicationMappingProfile));
         return services;
     }
 }

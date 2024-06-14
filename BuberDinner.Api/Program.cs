@@ -1,4 +1,5 @@
 using BuberDinner.Api.Common.Errors;
+using BuberDinner.Api.Common.Mapping;
 using BuberDinner.Application;
 using BuberDinner.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
@@ -10,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
     builder.Services.AddInfrastructure(builder.Configuration);
     builder.Services.AddControllers();
     builder.Services.AddSingleton<ProblemDetailsFactory, BuberDinnerProblemDetailsFactory>();
+    builder.Services.AddAutoMapper(typeof(ApiMappingProfile));
 }
 
 //Swagger
